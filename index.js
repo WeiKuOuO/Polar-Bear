@@ -124,5 +124,10 @@ bot.on("guildDelete", guild => {
   console.log(`退出群組 ${guild.name} [ ${guild.memberCount} ] (id: ${guild.id})`);
 });
 
+bot.on("ready", () => {
+  console.log(`${bot.user.username}成功啟動了!^w^, [ ${bot.guilds.size} | ${bot.channels.size} | ${bot.users.size} ]`);
+  bot.user.setActivity(`我正在 ${bot.guilds.size} 個群組潛水`,'https://www.twitch.tv/weikuouo');
+});
+
 
 bot.login(token);
