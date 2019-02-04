@@ -55,10 +55,10 @@ bot.on("ready", async () => {
   setInterval(function(){
     request(urlMain, function(err, response, body) {
       body = JSON.parse(body);
-      var status = '維護中!';
+      var status = ':lock: 維護中 ';
       var member = "伺服器關閉";
       if(body.online) {
-          status = '運行中';
+          status = ':unlock: 運行中 ';
           if(body.players.now) {
               member = body.players.now + " / " + body.players.max ;
           } else {
