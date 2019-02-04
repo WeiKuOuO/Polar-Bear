@@ -85,6 +85,7 @@ if(command === "join"){
       .addField("如何加入?",`\`\`\`xl\n只需打上!join驗證，為了確保我們的玩家都不是機器人\`\`\`` , true)
 
   bot.channels.filter(c => c.name === "加入驗證").forEach(c => c.send(joinmessage));
+}
 
 fs.readdir("./commands/", (err,files) => {
   if(err) console.log(err);
