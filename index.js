@@ -49,33 +49,32 @@ bot.on("ready", async () => {
   bot.channels.get('542000355307945997').bulkDelete('50')
   const serverstatus = new Discord.RichEmbed()
     .setAuthor(bot.user.username)
-    .setTitle("**伺服器資訊資訊**")
+    .setTitle("**伺服器資訊**")
     .setDescription("偵測中")
     .setColor("RANDOM")
-    .addField(":desktop: 人數","偵測中", true)
+    .addField(":level_slider: 開關狀態:","偵測中", true)
+    .addField(":boy: 在線人數:","偵測中", true)
   const m = await bot.channels.get('542000355307945997').send(serverstatus)
       
   setInterval(function(){
     request(urlMain, function(err, response, body) {
       body = JSON.parse(body);
-      var status = '伺服器現在是關閉的!';
-      var member = "關閉";
+      var status = '維護中!';
+      var member = "伺服器關閉";
       if(body.online) {
-          status = '伺服器現在是開啟的!  -  ';
+          status = '運行中';
           if(body.players.now) {
               member = body.players.now + " / " + body.players.max ;
-              status += '' + body.players.now + ' 人正在遊玩!!';
           } else {
               member = "0 / " + body.players.max ;
-              status += '沒人在玩喔! 快進去搶頭香吧!';
           } 
       }
       const serverinfo = new Discord.RichEmbed()
         .setAuthor(bot.user.username)
         .setTitle(text)
-        .setDescription(status)
         .setColor("RANDOM")
-        .addField(":desktop: 人數",`\`\`\`xl\n${member}\`\`\``, true)
+        .addField(":level_slider: 開關狀態:",(status), true)
+        .addField(":boy: 在線人數:",`${member}\n\n**play.arcticrealm-mc.club**`, true)
       m.edit(serverinfo)
     });
   },2200)
