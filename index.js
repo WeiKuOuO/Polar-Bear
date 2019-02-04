@@ -42,15 +42,11 @@ bot.on('message', async message => {
 }) 
 
 const ip = "play.arcticrealm-mc.club"
-const text = "**★ play.arcticrealm-mc.club  **的狀態";
 const urlMain = "https://mcapi.us/server/status?ip=" + (ip);
 
 bot.on("ready", async () => {
   bot.channels.get('542000355307945997').bulkDelete('50')
   const serverstatus = new Discord.RichEmbed()
-    .setAuthor(bot.user.username)
-    .setTitle("**伺服器資訊**")
-    .setDescription("偵測中")
     .setColor("RANDOM")
     .addField(":level_slider: 開關狀態:","偵測中", true)
     .addField(":boy: 在線人數:","偵測中", true)
@@ -70,8 +66,6 @@ bot.on("ready", async () => {
           } 
       }
       const serverinfo = new Discord.RichEmbed()
-        .setAuthor(bot.user.username)
-        .setTitle(text)
         .setColor("RANDOM")
         .addField(":level_slider: 開關狀態:",(status), true)
         .addField(":boy: 在線人數:",`${member}\n\n**play.arcticrealm-mc.club**`, true)
