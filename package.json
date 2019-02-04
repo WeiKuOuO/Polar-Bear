@@ -15,6 +15,7 @@
     "ms": "^2.1.1",
     "os": "^0.1.1",
     "profanities": "^2.8.0",
+    "request": "^2.88.0",
     "roblox-js": "^4.0.4",
     "simple-youtube-api": "^5.1.1",
     "ytdl-core": "^0.28.0"
