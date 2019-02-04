@@ -110,7 +110,7 @@ bot.on("message", async message => {
     const joinmessage = new Discord.RichEmbed()
         .setThumbnail(bot.user.avatarURL)
         .setTitle("加入須知")
-        .setDescription("歡迎來到北極境地Discord群組\n希望大家可以多多交流")
+        .setDescription("歡迎來到北極境地Discord群組，希望大家可以多多交流")
         .setColor(0x00FF04)
         .addField("如何加入?",`\`\`\`fix\n只需打上\"verify\"驗證，為了確保我們的玩家都不是機器人\`\`\`` , true)
   
