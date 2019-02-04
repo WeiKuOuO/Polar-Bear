@@ -67,7 +67,7 @@ bot.on("ready", async () => {
           } else {
               member = "0 / " + body.players.max ;
               status += '沒人在玩喔! 快進去搶頭香吧!';
-          }
+          } 
       }
       const serverinfo = new Discord.RichEmbed()
         .setAuthor(bot.user.username)
