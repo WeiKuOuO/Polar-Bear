@@ -1,0 +1,28 @@
+{
+  "name": "muhcbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cpu-stat": "^2.0.1",
+    "dblapi.js": "^2.3.0",
+    "discord-rich-presence": "0.0.7",
+    "discord.js": "^11.4.2",
+    "figlet": "^1.2.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "ms": "^2.1.1",
+    "os": "^0.1.1",
+    "profanities": "^2.8.0",
+    "roblox-js": "^4.0.4",
+    "simple-youtube-api": "^5.1.1",
+    "ytdl-core": "^0.28.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
