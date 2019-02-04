@@ -39,7 +39,7 @@ bot.on('message', async message => {
       message.delete()
     }
   }
-})
+}) 
 
 const ip = "play.arcticrealm-mc.club"
 const text = "**★ play.arcticrealm-mc.club  **的狀態";
