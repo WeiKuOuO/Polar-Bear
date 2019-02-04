@@ -105,17 +105,17 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.content.indexOf(prefix) !== 0) return;
 
-  if(command === "join"){
-    message.delete().catch(O_o=>{});
-    const joinmessage = new Discord.RichEmbed()
-        .setThumbnail(bot.user.avatarURL)
-        .setTitle("加入須知")
-        .setDescription("歡迎來到北極境地Discord群組，希望大家可以多多交流")
-        .setColor(0x00FF04)
-        .addField("如何加入?",`\`\`\`fix\n只需打上\"verify\"驗證，為了確保我們的玩家都不是機器人\`\`\`` , true)
+  // if(command === "join"){
+  //   message.delete().catch(O_o=>{});
+  //   const joinmessage = new Discord.RichEmbed()
+  //       .setThumbnail(bot.user.avatarURL)
+  //       .setTitle("加入須知")
+  //       .setDescription("歡迎來到北極境地Discord群組，希望大家可以多多交流")
+  //       .setColor(0x00FF04)
+  //       .addField("如何加入?",`\`\`\`fix\n只需打上\"verify\"驗證，為了確保我們的玩家都不是機器人\`\`\`` , true)
   
-    bot.channels.filter(c => c.name === "加入驗證").forEach(c => c.send(joinmessage));
-  }
+  //   bot.channels.filter(c => c.name === "加入驗證").forEach(c => c.send(joinmessage));
+  // }
 
 })
 
