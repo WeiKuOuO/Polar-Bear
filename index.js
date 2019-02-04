@@ -1,6 +1,7 @@
 
 const Discord = require('discord.js');
 const fs = require("fs");
+const request = require('request');
 
 const token = process.env.token
 const prefix = process.env.prefix
