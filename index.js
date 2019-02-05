@@ -32,7 +32,8 @@ bot.on('ready', function() {
           } else { 
               member = "0 / " + body.players.max ;
           } 
-    }
+      }
+    })
     bot.user.setActivity(statuslist[index], { type: "STREAMING", url: "https://www.twitch.tv/weikuouo"});
     index++
     if (index === statuslist.length) index = 0;
