@@ -7,7 +7,7 @@ const token = process.env.token
 const prefix = process.env.prefix
 
 const bot = new Discord.Client();
-const map = new map();
+const map = new Map();
 bot.commands = new Discord.Collection();
 
 let index = 0;
@@ -57,12 +57,13 @@ bot.on("ready", async () => {
   const m = await bot.channels.get('542000355307945997').send(serverstatus)
       
   setInterval(function(){
-    request(urlMain, function(err, response, body) {
+    request(urlMain, function(err, response, body, map) {
       body = JSON.parse(body);
       var status = ':lock: 維護中 ';
       var member = "伺服器關閉";
       var ping = (body.took);
-      console.log(body.players.sample.map(a => a.name).join("\n"))
+      // console.log(body.players.sample.map(a => a.name).join("\n"))
+      console.log(body.players.sample)
       if(body.online) {
           status = ':unlock: 運行中 ';
           if(body.players.online) {
