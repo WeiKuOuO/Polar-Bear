@@ -66,7 +66,7 @@ bot.on("ready", async () => {
           status = ':unlock: 運行中 ';
           if(body.players.online) {
               member = body.players.online + " / " + body.players.max ;
-          } else {
+          } else { 
               member = "0 / " + body.players.max ;
           } 
       }
