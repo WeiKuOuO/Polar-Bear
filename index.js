@@ -16,12 +16,28 @@ bot.on('ready', function() {
   const statuslist = [
       //`muhc/help | 任何問題請WeiKu#3402 ♪`,
       `機器人製作 | 微苦 ♪`,
+      `線上人數 | ${member}`,
+      `伺服器狀態 | ${status} `
   ];
   bot.setInterval(() => {
+    const urlMain = "https://mcapi.us/server/status?ip=play.arcticrealm-mc.club"
+    request(urlMain, function(err, response, body, map) {
+      body = JSON.parse(body);
+      var status = '維護中... ';
+      var member = "伺服器關閉";
+      if(body.online) {
+          status = '運行中... ';
+          if(body.players.now) {
+              member = body.players.now + " / " + body.players.max ;
+          } else { 
+              member = "0 / " + body.players.max ;
+          } 
+    }
     bot.user.setActivity(statuslist[index], { type: "STREAMING", url: "https://www.twitch.tv/weikuouo"});
     index++
     if (index === statuslist.length) index = 0;
-}, 3000)
+  }, 3000)
+
 }); 
  
 bot.on('message', async message => {
@@ -78,6 +94,8 @@ bot.on("ready", async () => {
       m.edit(serverinfo)
     });
   },3000)
+
+  
 })
 
 fs.readdir("./commands/", (err,files) => {
