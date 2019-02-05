@@ -42,7 +42,7 @@ bot.on('message', async message => {
   }
 }) 
 
-const urlMain = "https://mcapi.us/server/status?ip=play.arcticrealm-mc.club
+const urlMain = "https://mcapi.us/server/status?ip=play.arcticrealm-mc.club"
 // https://mcapi.us/server/status?ip=play.arcticrealm-mc.club
 // https:/api.mcsrvstat.us/ping/play.arcticrealm-mc.club
 
