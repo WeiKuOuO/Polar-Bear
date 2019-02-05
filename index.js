@@ -22,7 +22,7 @@ bot.on('ready', function() {
     if (index === statuslist.length) index = 0;
 }, 3000)
 });
-
+ 
 bot.on('message', async message => {
   if (message.author.bot) return
   if (message.channel.id == "541999708202205194") {
