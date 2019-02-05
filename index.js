@@ -63,7 +63,7 @@ bot.on("ready", async () => {
       var member = "伺服器關閉";
       var ping = (body.took);
       // console.log(body.players.sample.map(a => a.name).join("\n"))
-      console.log(body.players.sample)
+      // console.log(body.players.sample)
       if(body.online) {
           status = ':unlock: 運行中 ';
           if(body.players.online) {
@@ -74,8 +74,8 @@ bot.on("ready", async () => {
       }
       const serverinfo = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .addField(":level_slider: 開關狀態:",`${status}\n\n`, true)
-        .addField("Ping",`${ping} ms\n\n`, true)
+        .addField(":level_slider: 開關狀態:",`${status}\n\n `, true)
+        .addField("Ping",`${ping} ms\n\n `, true)
         .addField(":boy: 在線人數:",`${member}\n\n**play.arcticrealm-mc.club**`, true)
         .setThumbnail("https://eu.mc-api.net/v3/server/favicon/play.arcticrealm-mc.club")
       m.edit(serverinfo)
