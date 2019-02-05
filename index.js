@@ -43,36 +43,37 @@ bot.on('message', async message => {
 
 const ip = "play.arcticrealm-mc.club"
 const urlMain = "https://mcapi.us/server/status?ip=" + (ip);
+// https://mcapi.us/server/status?ip=play.arcticrealm-mc.club
 
-bot.on("ready", async () => {
-  bot.channels.get('542000355307945997').bulkDelete('50')
-  const serverstatus = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .addField(":level_slider: 開關狀態:","偵測中", true)
-    .addField(":boy: 在線人數:","偵測中", true)
-  const m = await bot.channels.get('542000355307945997').send(serverstatus)
+// bot.on("ready", async () => {
+//   bot.channels.get('542000355307945997').bulkDelete('50')
+//   const serverstatus = new Discord.RichEmbed()
+//     .setColor("RANDOM")
+//     .addField(":level_slider: 開關狀態:","偵測中", true)
+//     .addField(":boy: 在線人數:","偵測中", true)
+//   const m = await bot.channels.get('542000355307945997').send(serverstatus)
       
-  setInterval(function(){
-    request(urlMain, function(err, response, body) {
-      body = JSON.parse(body);
-      var status = ':lock: 維護中 ';
-      var member = "伺服器關閉";
-      if(body.online) {
-          status = ':unlock: 運行中 ';
-          if(body.players.now) {
-              member = body.players.now + " / " + body.players.max ;
-          } else {
-              member = "0 / " + body.players.max ;
-          } 
-      }
-      const serverinfo = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .addField(":level_slider: 開關狀態:",(status), true)
-        .addField(":boy: 在線人數:",`${member}\n\n**play.arcticrealm-mc.club**`, true)
-      m.edit(serverinfo)
-    });
-  },2200)
-})
+//   setInterval(function(){
+//     request(urlMain, function(err, response, body) {
+//       body = JSON.parse(body);
+//       var status = ':lock: 維護中 ';
+//       var member = "伺服器關閉";
+//       if(body.online) {
+//           status = ':unlock: 運行中 ';
+//           if(body.players.now) {
+//               member = body.players.now + " / " + body.players.max ;
+//           } else {
+//               member = "0 / " + body.players.max ;
+//           } 
+//       }
+//       const serverinfo = new Discord.RichEmbed()
+//         .setColor("RANDOM")
+//         .addField(":level_slider: 開關狀態:",(status), true)
+//         .addField(":boy: 在線人數:",`${member}\n\n**play.arcticrealm-mc.club**`, true)
+//       m.edit(serverinfo)
+//     });
+//   },2200)
+// })
 
 fs.readdir("./commands/", (err,files) => {
   if(err) console.log(err);
