@@ -50,8 +50,9 @@ bot.on("ready", async () => {
   const serverstatus = new Discord.RichEmbed()
     .setColor("RANDOM")
     .addField(":level_slider: 開關狀態:","偵測中", true)
+    .addField("Ping","偵測中", true)
     .addField(":boy: 在線人數:","偵測中", true)
-    .addThumbnail("https://eu.mc-api.net/v3/server/favicon/play.arcticrealm-mc.club")
+    .setThumbnail("https://eu.mc-api.net/v3/server/favicon/play.arcticrealm-mc.club")
   const m = await bot.channels.get('542000355307945997').send(serverstatus)
       
   setInterval(function(){
@@ -75,7 +76,7 @@ bot.on("ready", async () => {
         .addField(":level_slider: 開關狀態:",(status), true)
         .addField("Ping",`${ping} ms`, true)
         .addField(":boy: 在線人數:",`${member}\n\n**play.arcticrealm-mc.club**`, true)
-        .addThumbnail("https://eu.mc-api.net/v3/server/favicon/play.arcticrealm-mc.club")
+        .setThumbnail("https://eu.mc-api.net/v3/server/favicon/play.arcticrealm-mc.club")
       m.edit(serverinfo)
     });
   },2200)
