@@ -13,12 +13,6 @@ bot.commands = new Discord.Collection();
 let index = 0;
 
 bot.on('ready', function() {
-  const statuslist = [
-      //`muhc/help | 任何問題請WeiKu#3402 ♪`,
-      `機器人製作 | 微苦 ♪`,
-      `線上人數 | ${member}`,
-      `伺服器狀態 | ${status} `
-  ];
   bot.setInterval(() => {
     const urlMain = "https://mcapi.us/server/status?ip=play.arcticrealm-mc.club"
     request(urlMain, function(err, response, body, map) {
@@ -34,6 +28,12 @@ bot.on('ready', function() {
           } 
       }
     })
+    const statuslist = [
+      //`muhc/help | 任何問題請WeiKu#3402 ♪`,
+      `機器人製作 | 微苦 ♪`,
+      `線上人數 | ${member}`,
+      `伺服器狀態 | ${status} `
+    ]
     bot.user.setActivity(statuslist[index], { type: "STREAMING", url: "https://www.twitch.tv/weikuouo"});
     index++
     if (index === statuslist.length) index = 0;
