@@ -42,7 +42,7 @@ bot.on('message', async message => {
   }
 }) 
 
-const urlMain = "https://eu.mc-api.net/v3/server/ping/play.arcticrealm-mc.club"
+const urlMain = "https://mcapi.us/server/status?ip=play.arcticrealm-mc.club
 // https://mcapi.us/server/status?ip=play.arcticrealm-mc.club
 // https:/api.mcsrvstat.us/ping/play.arcticrealm-mc.club
 
@@ -64,8 +64,8 @@ bot.on("ready", async () => {
       // console.log(body.players.sample)
       if(body.online) {
           status = ':unlock: 運行中 ';
-          if(body.players.online) {
-              member = body.players.online + " / " + body.players.max ;
+          if(body.players.now) {
+              member = body.players.now + " / " + body.players.max ;
           } else { 
               member = "0 / " + body.players.max ;
           } 
