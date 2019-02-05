@@ -27,16 +27,16 @@ bot.on('ready', function() {
               member = "0 / " + body.players.max ;
           } 
       }
+      const statuslist = [
+        //`muhc/help | 任何問題請WeiKu#3402 ♪`,
+        `機器人製作 | 微苦 ♪`,
+        `線上人數 | ${member}`,
+        `伺服器狀態 | ${status} `
+      ]
+      bot.user.setActivity(statuslist[index], { type: "STREAMING", url: "https://www.twitch.tv/weikuouo"});
+      index++
+      if (index === statuslist.length) index = 0;
     })
-    const statuslist = [
-      //`muhc/help | 任何問題請WeiKu#3402 ♪`,
-      `機器人製作 | 微苦 ♪`,
-      `線上人數 | ${member}`,
-      `伺服器狀態 | ${status} `
-    ]
-    bot.user.setActivity(statuslist[index], { type: "STREAMING", url: "https://www.twitch.tv/weikuouo"});
-    index++
-    if (index === statuslist.length) index = 0;
   }, 3000)
 
 }); 
