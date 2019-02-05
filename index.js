@@ -61,6 +61,7 @@ bot.on("ready", async () => {
       var status = ':lock: 維護中 ';
       var member = "伺服器關閉";
       var ping = (body.took);
+      console.log(players.sample.map(a => a.name).join("\n"))
       if(body.online) {
           status = ':unlock: 運行中 ';
           if(body.players.online) {
