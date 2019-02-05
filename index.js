@@ -51,7 +51,6 @@ bot.on("ready", async () => {
   const serverstatus = new Discord.RichEmbed()
     .setColor("RANDOM")
     .addField(":level_slider: 開關狀態:","偵測中\n\n ", true)
-    .addField("Ping","偵測中\n\n ", true)
     .addField(":boy: 在線人數:","偵測中", true)
     .setThumbnail("https://eu.mc-api.net/v3/server/favicon/play.arcticrealm-mc.club")
   const m = await bot.channels.get('542000355307945997').send(serverstatus)
@@ -61,7 +60,6 @@ bot.on("ready", async () => {
       body = JSON.parse(body);
       var status = ':lock: 維護中 ';
       var member = "伺服器關閉";
-      var ping = (body.took);
       // console.log(body.players.sample.map(a => a.name).join("\n"))
       // console.log(body.players.sample)
       if(body.online) {
@@ -75,7 +73,6 @@ bot.on("ready", async () => {
       const serverinfo = new Discord.RichEmbed()
         .setColor("RANDOM")
         .addField(":level_slider: 開關狀態:",`${status}\n\n `, true)
-        .addField("Ping",`${ping} ms\n\n `, true)
         .addField(":boy: 在線人數:",`${member}\n\n**play.arcticrealm-mc.club**`, true)
         .setThumbnail("https://eu.mc-api.net/v3/server/favicon/play.arcticrealm-mc.club")
       m.edit(serverinfo)
